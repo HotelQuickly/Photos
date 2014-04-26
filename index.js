@@ -101,7 +101,7 @@ server = http.createServer(function(request, response) {
     favicon(response);
     break;
 
-  case '/health':
+  case '/healthy-check':
     redis.ping()
       .catch(function(err) {
         responses.response500(response, log, err.message);
