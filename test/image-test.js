@@ -38,9 +38,9 @@ describe('Image', function(){
 
   describe('#_optionsString', function(){
     it('should set the appropriate string', function(){
-      request.url = pg({query: 'h=50&width=50'}).path;
+      request.url = pg({query: 'h=50&width=50&watermark=1'}).path;
       var i = new Img(request);
-      i._optionsString().should.match(/_ar_w50_h50/);
+      i._optionsString().should.match(/_resize_w50_h50_watermark1/);
     });
 
     it('should not include crop dimensions in basic request', function(){
